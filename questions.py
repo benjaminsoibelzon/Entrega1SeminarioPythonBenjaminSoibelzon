@@ -9,6 +9,43 @@ words = [
     "entero",
     "lista",
 ]
+
+# AGREGADO: diccionario de categorías
+categories = {
+    "programación": [
+        "python",
+        "programa",
+        "variable",
+        "funcion",
+        "bucle",
+        "cadena",
+        "entero",
+        "lista",
+    ],
+    "animales": [
+        "perro",
+        "gato",
+        "tortuga",
+        "caballo",
+    ],
+    "frutas": [
+        "manzana",
+        "banana",
+        "pera",
+        "naranja",
+    ]
+}
+
+# AGREGADO: mostrar categorías y elegir una
+print("Categorías disponibles:")
+for nombre in categories:
+    print("-", nombre)
+categoria_elegida = input("Elegí una categoría: ")
+
+# AGREGADO: seleccionar la lista de palabras según la categoría elegida
+if categoria_elegida in categories:
+    words = categories[categoria_elegida]
+
 word = random.choice(words)
 guessed = []
 attempts = 6
