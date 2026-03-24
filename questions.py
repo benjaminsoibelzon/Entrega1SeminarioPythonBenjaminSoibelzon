@@ -46,7 +46,12 @@ categoria_elegida = input("Elegí una categoría: ")
 if categoria_elegida in categories:
     words = categories[categoria_elegida]
 
-word = random.choice(words)
+# AGREGADO: generar orden aleatorio sin repetición
+words_queue = random.sample(words, len(words))
+
+# AGREGADO: tomar la siguiente palabra sin repetir
+word = words_queue.pop()
+
 guessed = []
 attempts = 6
 score = 0  # <-- AGREGADO
